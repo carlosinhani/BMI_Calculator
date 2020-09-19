@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { StyleSheet, Text, View, Button, TextInput } from 'react-native';
+import style from './style';
 
 export default class App extends React.Component {
   state = {
@@ -44,10 +45,10 @@ export default class App extends React.Component {
         </View>
 
         <View>
-          <TextInput style={styles.peso} onChangeText={valor =>  { this.setState({peso: valor.replace (',', '.')});}} />
-          <TextInput style={styles.altura} onChangeText={valor => { this.setState({altura: valor.replace(',', '.')});}} />
+          <TextInput style={styles.peso} placeholder="Coloque seu Peso" onChangeText={valor =>  { this.setState({peso: valor.replace (',', '.')});}} />
+          <TextInput style={styles.altura} placeholder="Coloque sua Altura"onChangeText={valor => { this.setState({altura: valor.replace(',', '.')});}} />
 
-          <Button mode='contained' title="Calcular" onPress={this.calcularIMC} />
+          <Button  title="Calcular" onPress={this.calcularIMC} />
 
           
         </View>
@@ -58,45 +59,55 @@ export default class App extends React.Component {
 
 const styles = StyleSheet.create({
   app: {
-    padding: 30,
+    padding: 15,
   },
   painel: {
     alignSelf: 'center',
-    borderRadius: 15,
-    width: 200,
-    marginVertical: 30,
-    padding: 8,
+    borderRadius: 25,
+    width: 250,
+    marginVertical: 10,
+    padding: 10,
   },
   legenda: {
     textAlign: 'center',
+    fontSize: 30,
+    textDecorationLine:"underline",
     fontWeight: "bold",
   },
   resultado:{
      textAlign: 'center',
-     fontSize: 22,
+     fontSize: 30,
      fontWeight: 'bold',   
   },
   diagnostico: {
-    textAlign: 'center',
-    fontSize: 16,
-    fontWeight: 'bold',
+     textAlign: 'center',
+     fontSize: 25,
+     textDecorationLine:"underline",
+     fontWeight: 'bold',
   },
   peso: {
-     height:50,
+     height:60,
      borderRadius:10,
      marginVertical: 10,
-     borderColor: '#000',
+     fontSize: 25,
+     fontWeight: 'bold',
+     fontStyle: 'italic',
      textAlign:"center",
-     backgroundColor: '#bdc3c7',
+     color: '#f1c40f',
+     backgroundColor: '#2c3e50',
+     
   },  
   altura: {  
-     height: 50,
+     height: 60,
      borderRadius : 10,
      marginVertical: 10,
-     borderColor: '#000',
+     fontSize: 25,
+     fontWeight: 'bold',
+     fontStyle: "italic",
      textAlign: 'center',
-     backgroundColor: '#bdc3c7',
-
-  }
+     color: '#f1c40f',
+     backgroundColor: '#2c3e50',
+   }
+  
   
 });
