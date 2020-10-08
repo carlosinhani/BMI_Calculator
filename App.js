@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { StyleSheet, Text, View, Button, TextInput } from 'react-native';
-import style from './style';
+
 
 export default class App extends React.Component {
   state = {
@@ -48,8 +48,8 @@ export default class App extends React.Component {
           <TextInput style={styles.peso} placeholder="Coloque seu Peso" onChangeText={valor =>  { this.setState({peso: valor.replace (',', '.')});}} />
           <TextInput style={styles.altura} placeholder="Coloque sua Altura"onChangeText={valor => { this.setState({altura: valor.replace(',', '.')});}} />
 
-          <Button  title="Calcular" onPress={this.calcularIMC} />
-
+          
+          <Button  title="Calcular" color="#f0932b" onPress={this.calcularIMC}/>
           
         </View>
      </View>
@@ -60,8 +60,11 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   app: {
     padding: 15,
+    backgroundColor:'#130f40',
+    height: 900,
   },
   painel: {
+    
     alignSelf: 'center',
     borderRadius: 25,
     width: 250,
@@ -69,10 +72,12 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   legenda: {
+    marginTop: 20,
     textAlign: 'center',
     fontSize: 30,
     textDecorationLine:"underline",
     fontWeight: "bold",
+    color:'#f6e58d',
   },
   resultado:{
      textAlign: 'center',
